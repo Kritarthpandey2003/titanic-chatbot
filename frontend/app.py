@@ -53,6 +53,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 BACKEND_URL = os.getenv("BACKEND_URL", "http://127.0.0.1:8000")
+if not BACKEND_URL.startswith("http"):
+    BACKEND_URL = f"http://{BACKEND_URL}"
 
 st.title("🚢 Titanic Chat Agent")
 st.markdown("Build with LangChain, FastAPI and Streamlit by TailorTalk. Ask me anything about the Titanic passengers!")

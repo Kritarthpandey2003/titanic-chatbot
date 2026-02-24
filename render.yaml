@@ -16,10 +16,8 @@ services:
     buildCommand: "pip install -r requirements.txt"
     startCommand: "streamlit run frontend/app.py --server.port 10000 --server.address 0.0.0.0"
     envVars:
-      - key: BACKEND_HOST
+      - key: BACKEND_URL
         fromService:
           type: web
           name: titanic-backend
-          property: host
-      - key: BACKEND_URL
-        value: https://${BACKEND_HOST}
+          property: hostport
