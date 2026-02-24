@@ -20,4 +20,4 @@ services:
         fromService:
           type: web
           name: titanic-backend
-          property: hostport
+          property: url
